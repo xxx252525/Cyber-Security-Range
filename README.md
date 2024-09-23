@@ -12,3 +12,4 @@
 - vulhub
 - xss-labs
 - xss_platform
+- windows-kernel-exploits
