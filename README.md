@@ -15,3 +15,4 @@
 - windows-kernel-exploits
 ## 教程
 [教程地址](https://github.com/xxx252525/Cyber-Security-Range/blob/main/%E6%B8%97%E9%80%8F%E9%9D%B6%E5%9C%BA%E6%90%AD%E5%BB%BA.md)
+[渗透靶场搭建教程](https://tiangesec.org.cn/archives/rwqe)
