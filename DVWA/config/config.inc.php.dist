@@ -15,11 +15,11 @@ $DBMS = 'MySQL';
 # If you are using MariaDB then you cannot use root, you must use create a dedicated DVWA user.
 #   See README.md for more information on this.
 $_DVWA = array();
-$_DVWA[ 'db_server' ]   = getenv('DB_SERVER') ?: '127.0.0.1';
+$_DVWA[ 'db_server' ]   = '127.0.0.1';
 $_DVWA[ 'db_database' ] = 'dvwa';
 $_DVWA[ 'db_user' ]     = 'dvwa';
 $_DVWA[ 'db_password' ] = 'p@ssw0rd';
-$_DVWA[ 'db_port']      = '3306';
+$_DVWA[ 'db_port'] = '3306';
 
 # ReCAPTCHA settings
 #   Used for the 'Insecure CAPTCHA' module
@@ -32,6 +32,16 @@ $_DVWA[ 'recaptcha_private_key' ] = '';
 #   The default is 'impossible'. You may wish to set this to either 'low', 'medium', 'high' or impossible'.
 $_DVWA[ 'default_security_level' ] = 'impossible';
 
+# Default PHPIDS status
+#   PHPIDS status with each session.
+#   The default is 'disabled'. You can set this to be either 'enabled' or 'disabled'.
+$_DVWA[ 'default_phpids_level' ] = 'disabled';
+
+# Verbose PHPIDS messages
+#   Enabling this will show why the WAF blocked the request on the blocked request.
+#   The default is 'disabled'. You can set this to be either 'true' or 'false'.
+$_DVWA[ 'default_phpids_verbose' ] = 'false';
+
 # Default locale
 #   Default locale for the help page shown with each session.
 #   The default is 'en'. You may wish to set this to either 'en' or 'zh'.
@@ -40,17 +50,17 @@ $_DVWA[ 'default_locale' ] = 'en';
 # Disable authentication
 #   Some tools don't like working with authentication and passing cookies around
 #   so this setting lets you turn off authentication.
-$_DVWA[ 'disable_authentication' ] = false;
+$_DVWA[ 'disable_authentication' ] = true;
 
-define ('MYSQL', 'mysql');
-define ('SQLITE', 'sqlite');
+define ("MYSQL", "mysql");
+define ("SQLITE", "sqlite");
 
 # SQLi DB Backend
 #   Use this to switch the backend database used in the SQLi and Blind SQLi labs.
 #   This does not affect the backend for any other services, just these two labs.
 #   If you do not understand what this means, do not change it.
-$_DVWA['SQLI_DB'] = MYSQL;
-#$_DVWA['SQLI_DB'] = SQLITE;
-#$_DVWA['SQLITE_DB'] = 'sqli.db';
+$_DVWA["SQLI_DB"] = MYSQL;
+#$_DVWA["SQLI_DB"] = SQLITE;
+#$_DVWA["SQLITE_DB"] = "sqli.db";
 
 ?>

@@ -39,8 +39,7 @@ if ($change) {
 		$pass_new = md5( $pass_new );
 
 		// Update the database
-		$current_user = dvwaCurrentUser();
-		$insert = "UPDATE `users` SET password = '" . $pass_new . "' WHERE user = '" . $current_user . "';";
+		$insert = "UPDATE `users` SET password = '" . $pass_new . "' WHERE user = '" . dvwaCurrentUser() . "';";
 		$result = mysqli_query($GLOBALS["___mysqli_ston"],  $insert );
 
 		// Feedback for the user

@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( ) );
+dvwaPageStartup( array( 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ]   = 'Setup' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -43,14 +43,6 @@ if( $DBMS == 'MySQL' ) {
 	$database_type_name = "PostgreSQL";
 }
 
-$phpVersionWarning = "";
-
-if (version_compare(phpversion(), '6', '<')) {
-	$phpVersionWarning = "<span class=\"failure\">Versions of PHP below 7.x are not supported, please upgrade.</span><br /><br />";
-} elseif (version_compare(phpversion(), '7.3', '<')) {
-	$phpVersionWarning = "<span class=\"failure\">Versions of PHP below 7.3 may work but have known problems, please upgrade.</span><br /><br />";
-}
-
 $page[ 'body' ] .= "
 <div class=\"body_padded\">
 	<h1>Database Setup <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/spanner.png\" /></h1>
@@ -70,11 +62,11 @@ $page[ 'body' ] .= "
 	{$DVWAOS}<br />
 	<br />
 	PHP version: <em>" . phpversion() . "</em><br />
-	{$phpVersionWarning}
 	{$phpDisplayErrors}<br />
-	{$phpDisplayStartupErrors}<br />
+	{$phpSafeMode}<br/ >
 	{$phpURLInclude}<br/ >
 	{$phpURLFopen}<br />
+	{$phpMagicQuotes}<br />
 	{$phpGD}<br />
 	{$phpMySQL}<br />
 	{$phpPDO}<br />
@@ -89,8 +81,10 @@ $page[ 'body' ] .= "
 	{$DVWARecaptcha}<br />
 	<br />
 	{$DVWAUploadsWrite}<br />
-	{$bakWritable}
+	{$DVWAPHPWrite}<br />
 	<br />
+	<br />
+	{$bakWritable}
 	<br />
 	<i><span class=\"failure\">Status in red</span>, indicate there will be an issue when trying to complete some modules.</i><br />
 	<br />

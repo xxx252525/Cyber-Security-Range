@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( ) );
+dvwaPageStartup( array( 'phpids' ) );
 
 dvwaDatabaseConnect();
 
@@ -120,6 +120,7 @@ echo "<!DOCTYPE html>
 	<br />
 	<br />
 
+	<!-- <img src=\"" . DVWA_WEB_PAGE_TO_ROOT . "dvwa/images/RandomStorm.png\" /> -->
 	</div > <!--<div id=\"content\">-->
 
 	<div id=\"footer\">

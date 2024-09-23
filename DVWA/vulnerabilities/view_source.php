@@ -3,7 +3,7 @@
 define( 'DVWA_WEB_PAGE_TO_ROOT', '../' );
 require_once DVWA_WEB_PAGE_TO_ROOT . 'dvwa/includes/dvwaPage.inc.php';
 
-dvwaPageStartup( array( 'authenticated' ) );
+dvwaPageStartup( array( 'authenticated', 'phpids' ) );
 
 $page = dvwaPageNewGrab();
 $page[ 'title' ] .= 'Source' . $page[ 'title_separator' ].$page[ 'title' ];
@@ -46,12 +46,6 @@ if (array_key_exists ("id", $_GET) && array_key_exists ("security", $_GET)) {
 			break;
 		case "javascript" :
 			$vuln = 'JavaScript';
-			break;
-		case "authbypass" :
-			$vuln = 'Authorisation Bypass';
-			break;
-		case "open_redirect" :
-			$vuln = 'Open HTTP Redirect';
 			break;
 		default:
 			$vuln = "Unknown Vulnerability";
