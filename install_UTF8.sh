@@ -32,6 +32,7 @@ execute_command sudo systemctl enable mariadb.service
 
 # 安装PHP和相关模块
 execute_command sudo dnf install -y php php-json php-fpm php-gd php-xml
+execute_command sudo dnf install php php-pear php-devel
 php --version
 
 # 安装Java OpenJDK
