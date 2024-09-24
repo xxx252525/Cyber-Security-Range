@@ -31,8 +31,7 @@ execute_command sudo mysqladmin -uroot password '123456'
 execute_command sudo systemctl enable mariadb.service
 
 # 安装PHP和相关模块
-execute_command sudo dnf install -y php php-json php-fpm php-gd php-xml
-execute_command sudo dnf install -y php php-pear php-devel
+execute_command sudo dnf install -y php php-json php-fpm php-gd php-xml php-pear php-devel php-mysqlnd
 php --version
 
 # 安装Java OpenJDK
