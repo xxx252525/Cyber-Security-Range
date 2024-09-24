@@ -46,9 +46,8 @@ sudo systemctl disable ufw || echo "no find ufw"
 
 # 安装和配置Docker服务
 execute_command sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
-
-
-execute_command sudo apt install -y docker
+sudo apt install -y docker.io
+sudo apt install -y docker
 execute_command sudo systemctl start docker
 execute_command sudo systemctl enable docker
 
